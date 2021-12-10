@@ -6,22 +6,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.Service.CarServise;
+import web.service.CarServise;
 
 
 @Controller
 @RequestMapping("/cars")
 public class CarController {
     @Autowired
-    CarServise carServise;
+     CarServise carServise;
 
     @GetMapping("")
     public String getCarsByTotal(@RequestParam(value = "count", required = false) Integer count, Model model) {
-        if(count == null) {
-            model.addAttribute("garage", carServise.getCars());
-        } else {
-            model.addAttribute("garage",  carServise.getCarsByTotal(count));
-        }
+
+        model.addAttribute("garage", carServise.getCarsByTotal(count));
         return "cars";
     }
 }

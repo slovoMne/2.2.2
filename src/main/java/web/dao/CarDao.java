@@ -1,6 +1,6 @@
-package web.Dao;
+package web.dao;
 
-import web.Model.Car;
+import web.model.Car;
 
 import java.util.List;
 
@@ -9,4 +9,6 @@ public interface CarDao {
     Car getCarByID(int id);
     List<Car> getCars();
     List<Car> getCarsByTotal(int id);
+
+    List<Car> cars();
 }
