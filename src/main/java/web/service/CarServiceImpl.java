@@ -7,7 +7,7 @@ import web.model.Car;
 import java.util.List;
 
 @Service
-public class CarServiceImpl implements CarService {
+public class CarServiceImpl implements CarServise {
     private CarDao carDao;
 
     public CarServiceImpl(CarDao carDao) {

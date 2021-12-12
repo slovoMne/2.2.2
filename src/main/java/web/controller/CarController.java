@@ -15,14 +15,14 @@ import java.util.List;
 @Controller
 @RequestMapping("/cars")
 public class CarController {
+
     @Autowired
     private CarServise carServise;
 
     @GetMapping("")
-    public String getCarsByTotal(@RequestParam(defaultValue = "5", value = "count",
+    public String getCarsByTotal(@RequestParam(value = "count",
             required = false) Integer count, Model model) {
-        List<Car> cars = carServise.getCarsByTotal(count));
-        model.addAttribute("garage", cars);
+        model.addAttribute("garage", carServise.getCarsByTotal(count));
         return "cars";
     }
 }
